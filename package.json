@@ -1,0 +1,49 @@
+{
+  "name": "vinyl.tracker.api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint \"./**/*.js\"",
+    "start": "VINYL_TRACKER_ENV=staging node ./bin/www",
+    "start-dev": "PORT=4000 VINYL_TRACKER_ENV=dev nodemon ./bin/www",
+    "start-staging": "PORT=4000 VINYL_TRACKER_ENV=staging nodemon ./bin/www",
+    "start-database": "docker run -e POSTGRES_USER=vinyltrackerdev -e POSTGRES_DB=vinyltracker -e ALLOW_IP_RANGE=0.0.0.0/0 -v $(pwd)/pgdata:/var/lib/postgresql/data -ti -p 5432:5432 mdillon/postgis"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javiermanzano/vinyl.tracker.api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javiermanzano/vinyl.tracker.api/issues"
+  },
+  "homepage": "https://github.com/javiermanzano/vinyl.tracker.api#readme",
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "joi": "^14.0.4",
+    "morgan": "~1.9.0",
+    "pg": "^7.7.1",
+    "sequelize": "^4.41.2",
+    "semver": "^5.6.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "husky": "^1.1.2",
+    "mocha": "^5.2.0"
+  }
+}

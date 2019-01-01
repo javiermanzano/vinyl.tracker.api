@@ -1,0 +1,8 @@
+{
+  "ENV": "test",
+  "DATABASE_NAME": "vinyltracker",
+  "DATABASE_PASSWORD": "",
+  "DATABASE_USER": "vinyltrackerdev",
+  "DATABASE_LOGGING_ENABLED": true,
+  "DATABASE_URL": "localhost"
+}
